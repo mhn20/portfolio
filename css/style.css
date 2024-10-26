@@ -226,7 +226,7 @@ textarea {
   }
 }
 .home-hero__socials {
-  position: absolute;
+  position: fixed;
   top: 50%;
   transform: translateY(-50%);
   background: #fff;
@@ -892,4 +892,9 @@ textarea {
     border-radius: 21px;
     border: 6px solid #2C2E81;
     opacity: 0.9;
+}
+
+.sidebar-left-font{
+    color: blue;
+    font-size: 37px;
 }
