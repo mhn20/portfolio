@@ -623,7 +623,36 @@ footer { text-align: center; padding: 2rem 0; color: var(--text-secondary); font
 }
 
 @media (max-width: 640px) {
-    .skills-grid, .project-grid, .gallery-grid, .about-stats { grid-template-columns: 1fr !important; }
+    .skills-grid, .gallery-grid, .about-stats { grid-template-columns: 1fr !important; }
+    .project-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 0.75rem !important; }
+    
+    /* Optimasi Kartu Proyek agar Slim & Tidak Peang */
+    .project-card .project-image { height: 120px; } /* Tinggi gambar lebih pendek */
+    .project-content { padding: 0.85rem; }
+    .project-content h3 { 
+        font-size: 0.95rem; 
+        margin-bottom: 0.4rem; 
+        line-height: 1.2; 
+    }
+    .project-content p { 
+        font-size: 0.75rem; 
+        margin-bottom: 0.8rem;
+        /* Truncate text agar tinggi kartu konsisten */
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    .project-tech { gap: 0.3rem; margin-bottom: 1rem; }
+    .project-tech span { font-size: 0.6rem; padding: 0.15rem 0.4rem; }
+    
+    .project-card .btn-read-more { 
+        padding: 0.4rem 0.8rem; 
+        font-size: 0.65rem; 
+        width: 100%; 
+        justify-content: center; 
+    }
+
     .stat-box { padding: 1.25rem; }
     .stat-box h3 { font-size: 2.2rem; }
 }
