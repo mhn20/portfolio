@@ -1,568 +1,376 @@
-
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="shortcut icon" href="images/profile.jpg" type="image/x-icon" />
-    <link rel="icon" href="images/profile.jpg" type="image/x-icon" />
-    <title>MAHMUDIN | SOFTWARE ENGINEER</title>
-    <meta
-      name="description"
-      content="Experienced Programmer in Building Efficient and Scalable Technology Solutions"
-    />
-    <meta name="author" content="MAHMUDIN" />
-
-    <meta
-      property="og:title"
-      content="MAHMUDIN | SOFTWARE ENGINEER"
-    />
-    <meta property="og:site_name" content="MAHMUDIN PORTFOLIO WESBOYE" />
-    <meta
-      property="og:description"
-      content="Experienced Programmer in Building Efficient and Scalable Technology Solutions"
-    />
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:image"
-      content=""
-    />
-
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
-      rel="stylesheet"
-    />
-    <link href="pflip/css/pdfflip.css" rel="stylesheet" type="text/css">
-    <style>
-      #PDFF{
-        margin-top: -226px;
-      }
-
-      @media only screen and (max-width: 600px) {
-        #PDFF{
-          margin-top: -100px;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <header class="header">
-      <div class="header__content">
-        <div class="header__logo-container">
-          <div class="header__logo-img-cont">
-            <img
-              src="images/profile.jpg"
-              alt="MAHMUDIN Logo Image"
-              class="header__logo-img"
-            />
-          </div>
-          <span class="header__logo-sub">MAHMUDIN</span>
-        </div>
-        <div class="header__main">
-          <ul class="header__links">
-            <li class="header__link-wrapper">
-              <a href="" class="header__link"> Home </a>
-            </li>
-            <li class="header__link-wrapper">
-              <a href="#projects" class="header__link"> Projects </a>
-            </li>
-            <li class="header__link-wrapper">
-              <a href="#about" class="header__link">Professional Summary </a>
-            </li>
-            <li class="header__link-wrapper">
-              <a href="#cv" class="header__link"> Curriculum Vitae </a>
-            </li>
-            <li class="header__link-wrapper">
-              <a href="#contact" class="header__link"> Contact </a>
-            </li>
-          </ul>
-          <div class="header__main-ham-menu-cont">
-            <img
-              src="images/ham-menu.svg"
-              alt="hamburger menu"
-              class="header__main-ham-menu"
-            />
-            <img
-              src="images/ham-menu-close.svg"
-              alt="hamburger menu close"
-              class="header__main-ham-menu-close d-none"
-            />
-          </div>
-        </div>
-      </div>
-      <div class="header__sm-menu">
-        <div class="header__sm-menu-content">
-          <ul class="header__sm-menu-links">
-            <li class="header__link-wrapper">
-              <a href="" class="header__link"> Home </a>
-            </li>
-            <li class="header__link-wrapper">
-              <a href="#projects" class="header__link"> Projects </a>
-            </li>
-
-            <li class="header__link-wrapper">
-              <a href="#about" class="header__link"> Professional Summary </a>
-            </li>
-
-            <li class="header__link-wrapper">
-              <a href="#cv" class="header__link"> Curriculum Vitae </a>
-            </li>
-
-            <li class="header__link-wrapper">
-              <a href="#contact" class="header__link"> Contact </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </header>
-    <section class="home-hero">
-      <div class="home-hero__content">
-        <center>
-          <div class="header__logo-img-cont" style="width:30rem;height:30rem;border-radius:200px;border:6px solid #2C2E81;">
-            <img
-              src="images/profile.jpg"
-              alt="MAHMUDIN Logo Image"
-              class="header__logo-img"
-            />
-          </div>
-          <br>
-        </center>
-        <h1 class="heading-primary label-custom">I'M Software Engineer</h1>
-        <div class="home-hero__info">
-          <p class="text-primary  label-custom">
-            Experienced Programmer in Building Efficient and Scalable Technology Solutions, 
-            Back-End and Front-End Programming Expert with Expertise in Various Advanced Frameworks, 
-            Integrating Innovation with Efficiency in Every Technology Project, 
-            Optimize Code and Systems for Maximum Performance and Scalability,
-            Reliable Digital Solutions Developer with a Focus on APIs, Databases and Scalability
-          </p>
-        </div>
-        <div class="home-hero__cta">
-          <a href="#projects" class="btn btn--bg">Projects</a>
-        </div>
-      </div>
-      <div class="home-hero__socials" style="z-index: 99;">
-        <div class="home-hero__social">
-          <a
-            href="https://www.linkedin.com/in/mahmudin-295083114/"
-            class="home-hero__social-icon-link"
-            rel="noreferrer"
-            target="_blank"
-          >
-            <i class="fa-brands fa-linkedin home-hero__social-icon sidebar-left-font"></i>
-          </a>
-        </div>
-        <div class="home-hero__social">
-          <a
-            href="https://github.com/mhn20"
-            class="home-hero__social-icon-link"
-            rel="noreferrer"
-            target="_blank"
-          >
-          <i class="fa-brands fa-github home-hero__social-icon sidebar-left-font"></i>
-          </a>
-        </div>
-        <div class="home-hero__social">
-          <a
-            href="https://api.whatsapp.com/send/?phone=6285798835322&text="
-            class="home-hero__social-icon-link"
-            rel="noreferrer"
-            target="_blank"
-          >
-          <i class="fa-brands fa-whatsapp home-hero__social-icon sidebar-left-font"></i>
-          </a>
-        </div>
-      </div>
-      <div class="home-hero__mouse-scroll-cont">
-        <div class="mouse"></div>
-      </div>
-    </section>
-    <section id="projects" class="projects sec-pad">
-      <div class="main-container">
-        <h2 class="heading heading-sec heading-sec__mb-bg">
-          <span class="heading-sec__main">Projects</span>
-          <span class="heading-sec__sub">
-            Here you will find some of the personal and clients projects that I
-            created with each project containing its own case study
-          </span>
-        </h2>
-
-        <div class="projects__content">
-          <div class="projects__row">
-            <div class="projects__row-img-cont">
-              <img
-                src="images/projects/puskeu/dashboard-primary.jpg"
-                alt="Software Screenshot"
-                class="projects__row-img"
-                loading="lazy"
-              />
-            </div>
-            <div class="projects__row-content">
-              <h3 class="projects__row-content-title">Dashboard Applications of Puskeu POLRI</h3>
-              <p class="projects__row-content-desc">
-                Dashboard application of the Republic of Indonesian Police to help with finances, salaries, tunkin, etc
-                <div class="about__content-skills">
-                  <h3 class="about__content-title">Tool Used</h3>
-                  <div class="skills">
-                    <div class="skills__skill">HTML</div>
-                    <div class="skills__skill">CSS</div>
-                    <div class="skills__skill">JAVASCRIPT</div>
-                    <div class="skills__skill">JQUERY</div>
-                    <div class="skills__skill">DJANGO FRAMEWORK</div>
-                    <div class="skills__skill">SSO KEYCLOAK</div>
-                    <div class="skills__skill">ORACLE</div>
-                    <div class="skills__skill">NGINX</div>
-                    <div class="skills__skill">GUNICORN</div>
-                  </div>
-                </div>
-              </p>
-              <!-- <a class='btn btn--med btn--theme dynamicBgClr' href='/project-1' target='_blank'>Case Study</a> -->
-            </div>
-          </div>
-          <div class="projects__row">
-            <div class="projects__row-img-cont">
-              <img
-                src="images/projects/puskeu/tunkin.jpg"
-                alt="Software Screenshot"
-                class="projects__row-img"
-                loading="lazy"
-              />
-            </div>
-            <div class="projects__row-content">
-              <h3 class="projects__row-content-title">Gaji & Tunkin Applications of Puskeu POLRI</h3>
-              <p class="projects__row-content-desc">
-                Gaji & Tunkin application of the Republic of Indonesian Police to help with Upload ADK Tunkin, Proccessing Lock & Unlock Period, Permintaan, Realisasi, Susulan, & Pengembalian.
-                <div class="about__content-skills">
-                  <h3 class="about__content-title">Tool Used</h3>
-                  <div class="skills">
-                    <div class="skills__skill">HTML</div>
-                    <div class="skills__skill">CSS</div>
-                    <div class="skills__skill">JAVASCRIPT</div>
-                    <div class="skills__skill">JQUERY</div>
-                    <div class="skills__skill">DJANGO FRAMEWORK</div>
-                    <div class="skills__skill">SSO KEYCLOAK</div>
-                    <div class="skills__skill">ORACLE</div>
-                    <div class="skills__skill">NGINX</div>
-                    <div class="skills__skill">GUNICORN</div>
-                  </div>
-                </div>
-              </p>
-              <!-- <a class='btn btn--med btn--theme dynamicBgClr' href='/project-1' target='_blank'>Case Study</a> -->
-            </div>
-          </div>
-          <div class="projects__row">
-            <div class="projects__row-img-cont">
-              <img
-                src="images/projects/puskeu/BIA.jpg"
-                alt="Software Screenshot"
-                class="projects__row-img"
-                loading="lazy"
-              />
-            </div>
-            <div class="projects__row-content">
-              <h3 class="projects__row-content-title">BIA Applications of Puskeu POLRI</h3>
-              <p class="projects__row-content-desc">
-                BIA (Pembiayaan) application of the Republic of Indonesian Police to help with Penyaluran Tunkin Period, Transactions Kasbank of Minusca, Jasa Raharja, & Samsat.
-                <div class="about__content-skills">
-                  <h3 class="about__content-title">Tool Used</h3>
-                  <div class="skills">
-                    <div class="skills__skill">HTML</div>
-                    <div class="skills__skill">CSS</div>
-                    <div class="skills__skill">JAVASCRIPT</div>
-                    <div class="skills__skill">JQUERY</div>
-                    <div class="skills__skill">DJANGO FRAMEWORK</div>
-                    <div class="skills__skill">SSO KEYCLOAK</div>
-                    <div class="skills__skill">ORACLE</div>
-                    <div class="skills__skill">NGINX</div>
-                    <div class="skills__skill">GUNICORN</div>
-                  </div>
-                </div>
-              </p>
-              <!-- <a class='btn btn--med btn--theme dynamicBgClr' href='/project-1' target='_blank'>Case Study</a> -->
-            </div>
-          </div>
-          <div class="projects__row">
-            <div class="projects__row-img-cont">
-              <img
-                src="images/projects/puskeu/perwabkeu.jpg"
-                alt="Software Screenshot"
-                class="projects__row-img"
-                loading="lazy"
-              />
-            </div>
-            <div class="projects__row-content">
-              <h3 class="projects__row-content-title">PERWABKEU Applications of Puskeu POLRI</h3>
-              <p class="projects__row-content-desc">
-                PERWABKEU (Penanggungjawab Keuangan) application of the Republic of Indonesian Police to help with Verification Kontraktual, Dukops (Dukungan Operasi), & Direktif Kapolri.
-                <div class="about__content-skills">
-                  <h3 class="about__content-title">Tool Used</h3>
-                  <div class="skills">
-                    <div class="skills__skill">HTML</div>
-                    <div class="skills__skill">CSS</div>
-                    <div class="skills__skill">JAVASCRIPT</div>
-                    <div class="skills__skill">JQUERY</div>
-                    <div class="skills__skill">DJANGO FRAMEWORK</div>
-                    <div class="skills__skill">SSO KEYCLOAK</div>
-                    <div class="skills__skill">ORACLE</div>
-                    <div class="skills__skill">NGINX</div>
-                    <div class="skills__skill">GUNICORN</div>
-                  </div>
-                </div>
-              </p>
-              <!-- <a class='btn btn--med btn--theme dynamicBgClr' href='/project-1' target='_blank'>Case Study</a> -->
-            </div>
-          </div>
-          <div class="projects__row">
-            <div class="projects__row-img-cont">
-              <img
-                src="images/projects/puskeu/website.jpg"
-                alt="Software Screenshot"
-                class="projects__row-img"
-                loading="lazy"
-              />
-            </div>
-            <div class="projects__row-content">
-              <h3 class="projects__row-content-title">Website Puskeu POLRI</h3>
-              <p class="projects__row-content-desc">
-                Website Informations
-                <div class="about__content-skills">
-                  <h3 class="about__content-title">Tool Used</h3>
-                  <div class="skills">
-                    <div class="skills__skill">HTML</div>
-                    <div class="skills__skill">CSS</div>
-                    <div class="skills__skill">JAVASCRIPT</div>
-                    <div class="skills__skill">Laravel</div>
-                    <div class="skills__skill">MYSQL</div>
-                  </div>
-                </div>
-              </p>
-              <a class='btn btn--med btn--theme dynamicBgClr' href='https://puskeu.polri.go.id/' target='_blank'>Visit Website</a>
-            </div>
-          </div>
-          <div class="projects__row">
-            <div class="projects__row-img-cont">
-              <img
-                src="images/projects/puskeu/zi.jpg"
-                alt="Software Screenshot"
-                class="projects__row-img"
-                loading="lazy"
-              />
-            </div>
-            <div class="projects__row-content">
-              <h3 class="projects__row-content-title">Zona Integritas Puskeu POLRI</h3>
-              <p class="projects__row-content-desc">
-                Website Informations
-                <div class="about__content-skills">
-                  <h3 class="about__content-title">Tool Used</h3>
-                  <div class="skills">
-                    <div class="skills__skill">HTML</div>
-                    <div class="skills__skill">CSS</div>
-                    <div class="skills__skill">JAVASCRIPT</div>
-                    <div class="skills__skill">Laravel</div>
-                    <div class="skills__skill">MYSQL</div>
-                  </div>
-                </div>
-              </p>
-              <a class='btn btn--med btn--theme dynamicBgClr' href='https://zi.puskeu.polri.go.id/' target='_blank'>Visit Website</a>
-            </div>
-          </div>
-          <div class="projects__row">
-            <div class="projects__row-img-cont">
-              <img
-                src="images/projects/landingpage/sandalcetus.jpg"
-                alt="Software Screenshot"
-                class="projects__row-img"
-                loading="lazy"
-              />
-            </div>
-            <div class="projects__row-content">
-              <h3 class="projects__row-content-title">Landing Page Sandal Cetus</h3>
-              <p class="projects__row-content-desc">
-                Sandal Cetus is a landing page to help sell online.
-                <div class="about__content-skills">
-                  <h3 class="about__content-title">Tool Used</h3>
-                  <div class="skills">
-                    <div class="skills__skill">HTML</div>
-                    <div class="skills__skill">CSS</div>
-                    <div class="skills__skill">JAVASCRIPT</div>
-                    <div class="skills__skill">CODEIGNITER</div>
-                    <div class="skills__skill">MYSQL</div>
-                  </div>
-                </div>
-              </p>
-              <a class='btn btn--med btn--theme dynamicBgClr' href='https://sandalcetus.com/' target='_blank'>Visit Website</a>
-            </div>
-          </div>
-          <div class="projects__row">
-            <div class="projects__row-img-cont">
-              <img
-                src="images/projects/page/yotowawa.jpg"
-                alt="Software Screenshot"
-                class="projects__row-img"
-                loading="lazy"
-              />
-            </div>
-            <div class="projects__row-content">
-              <h3 class="projects__row-content-title">Yotowawa Media Center</h3>
-              <p class="projects__row-content-desc">
-                Website containing information on the culture of the Indonesian Kisar Islands. This website has many features, namely: Meher & Woirata language translator, Text to speech, and Question Quiz Game.
-                <div class="about__content-skills">
-                  <h3 class="about__content-title">Tool Used</h3>
-                  <div class="skills">
-                    <div class="skills__skill">HTML</div>
-                    <div class="skills__skill">CSS</div>
-                    <div class="skills__skill">JAVASCRIPT</div>
-                    <div class="skills__skill">CODEIGNITER</div>
-                    <div class="skills__skill">MYSQL</div>
-                  </div>
-                </div>
-              </p>
-              <a class='btn btn--med btn--theme dynamicBgClr' href='https://yotowawa.com/' target='_blank'>Visit Website</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="about" class="about sec-pad">
-      <div class="main-container">
-        <h2 class="heading heading-sec heading-sec__mb-med">
-          <span class="heading-sec__main">Professional Summary</span>
-          <span class="heading-sec__sub">
-            Here you will find more information about me, what I do, and my
-            current skills mostly in terms of programming and technology
-          </span>
-        </h2>
-        <div class="about__content">
-          <div class="about__content-main">
-            <h3 class="about__content-title">Get to know me!</h3>
-            <div class="about__content-details">
-              <p class="about__content-details-para">
-                Let me introduce myself, my name is Mahmudin, my city is from South Tangerang, I am 30 years old, Born in Jakarta, March 28 1994, 
-                My last education was a D3 in Informatics & Computer Management at Bina Sarana Informatika, graduating in 2015 with a GPA of 3.30/4.00. Then I worked for more than 5 years in the IT Programmer field. Skilled software developer with 5+ years of experience in backend development, specializing in  Python and PHP. Proven track record in building efficient, scalable applications and integrating APIs. Strong problem-solving abilities and a passion for clean code and innovative solutions.
-              </p>
-            </div>
-            <a href="#projects" class="btn btn--med btn--theme dynamicBgClr"
-              >Project</a>
-            <a href="#cv" class="btn btn--med btn--theme dynamicBgClr"
-            >Curriculum Vitae</a>
-          </div>
-          <div class="about__content-skills">
-            <h3 class="about__content-title">My Skills</h3>
-            <div class="skills">
-              <div class="skills__skill">HTML</div>
-              <div class="skills__skill">CSS</div>
-              <div class="skills__skill">JavaScript</div>
-              <div class="skills__skill">Jquery</div>
-              <div class="skills__skill">Python</div>
-              <div class="skills__skill">Flask Framework</div>
-              <div class="skills__skill">Django Framework</div>
-              <div class="skills__skill">Restful API (Swagger, Postman, Lumen)</div>
-              <div class="skills__skill">PHP</div>
-              <div class="skills__skill">Codeigniter Framework</div>
-              <div class="skills__skill">Laravel Framework</div>
-              <div class="skills__skill">Oracle, PostgreSQL, MySQL</div>
-              <div class="skills__skill">GIT, Docker, Nginx, Gunicorn</div>
-              <div class="skills__skill">SSO Keycloak</div>
-              <div class="skills__skill">Adobe Photoshop</div>
-              <div class="skills__skill">Microfost Office</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahmudin | Software Developer</title>
+    <meta name="description" content="Software Developer dengan 5+ tahun pengalaman dalam pengembangan backend, fullstack development, dan integrasi API skala besar.">
+    <meta name="keywords" content="Fullstack Developer, Python, PHP, Oracle, PostgreSQL, API Integration, Indonesia">
     
-    <section id="cv" class="projects sec-pad">
-      <div class="">
-        <h2 class="heading heading-sec heading-sec__mb-bg">
-          <span class="heading-sec__main">Curriculum Vitae</span>
-          <span class="heading-sec__sub">
-            Attached CV & Supporting Certificate.
-          </span>
-        </h2>
-      </div>
-    </section>
-    <div class="PDFFlip" id="PDFF" source="images/CV MAHMUDIN ATS_IND.pdf"></div>
-    <section id="contact" class="contact sec-pad dynamicBg">
-      <div class="main-container">
-        <h2 class="heading heading-sec heading-sec__mb-med">
-          <span class="heading-sec__main heading-sec__main--lt">Contact</span>
-          <span class="heading-sec__sub heading-sec__sub--lt">
-            Feel free to Contact me by submitting the form below and I will get
-            back to you as soon as possible
-          </span>
-        </h2>
-        <div class="contact__form-container">
-          <form action='https://api.whatsapp.com/send/' class='contact__form' method='text'><input type='hidden' name='phone' value='6285798835322' />
-            <div class="contact__form-field">
-              <label class="contact__form-label" for="message">Message</label>
-              <textarea
-                required
-                cols="30"
-                rows="10"
-                class="contact__form-input"
-                placeholder="Enter Your Message"
-                name="text"
-                id="message"
-              ></textarea>
-            </div>
-            <button type="submit" class="btn btn--theme contact__btn">
-              Send
-            </button>
-          </form>
-        </div>
-      </div>
-    </section>
-    <footer class="main-footer">
-      <div class="main-container">
-        <div class="main-footer__upper">
-          <div class="main-footer__row main-footer__row-1">
-            <h2 class="heading heading-sm main-footer__heading-sm">
-              <span>Social</span>
-            </h2>
-            <div class="main-footer__social-cont">
-              <a target="_blank"
-                rel="noreferrer"
-                href="https://linkedin.com/in/rammcodes"
-              >
-                <i class="fa-brands fa-linkedin main-footer__icon" style="font-size:25px;"></i>
-              </a>
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href="https://github.com/rammcodes"
-              >
-              <i class="fa-brands fa-github main-footer__icon" style="font-size:25px;"></i>
-              </a>
-            </div>
-          </div>
-          <div class="main-footer__row main-footer__row-2">
-            <h2 class="heading heading-sm text-lt">MAHMUDIN</h2>
-            <p class="main-footer__short-desc">
-              Experienced Programmer in Building Efficient and Scalable Technology Solutions, Back-End and Front-End Programming Expert with Expertise in Various Advanced Frameworks, Integrating Innovation with Efficiency in Every Technology Project, Optimize Code and Systems for Maximum Performance and Scalability, Reliable Digital Solutions Developer with a Focus on APIs, Databases and Scalability.
-            </p>
-          </div>
-        </div>
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Mahmudin | Senior Software Developer">
+    <meta property="og:description" content="Membangun solusi sistem yang scalable dan aman dengan teknologi modern.">
+    <meta property="og:image" content="images/og-preview.png">
 
-        <!-- If you give me some credit or shoutout here by linking to my website, then it will be a big thing for me and will help me a lot :) -->
-        <div class="main-footer__lower">
-          &copy; Copyright
-          <script>
-            document.write(new Date().getFullYear());
-          </script>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" defer></script>
+
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#beranda"><i class="fas fa-home"></i> <span data-i18n="nav_home">Beranda</span></a></li>
+                <li><a href="#tentang"><i class="fas fa-user"></i> <span data-i18n="nav_about">Tentang</span></a></li>
+                <li><a href="#keahlian"><i class="fas fa-code"></i> <span data-i18n="nav_skills">Keahlian</span></a></li>
+                <li><a href="#proyek"><i class="fas fa-project-diagram"></i> <span data-i18n="nav_projects">Proyek</span></a></li>
+                <li><a href="#kontak"><i class="fas fa-envelope"></i> <span data-i18n="nav_contact">Kontak</span></a></li>
+            </ul>
+            <div class="lang-switch">
+                <button class="lang-btn" onclick="changeLanguage('id')" id="lang-id">ID</button>
+                <button class="lang-btn" onclick="changeLanguage('en')" id="lang-en">EN</button>
+            </div>
         </div>
-      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="hero">
+        <!-- Background Elements -->
+        <div class="hero-bg-parallax"></div>
+        <div class="hero-blob blob-1"></div>
+        <div class="hero-blob blob-2"></div>
+
+        <div class="hero-inner">
+        <div class="hero-content">
+            <p class="greeting" data-i18n="hero_greeting">Halo, Dunia! Saya</p>
+            <h1 class="name">Mahmudin</h1>
+            <h2 class="role"><span id="typewriter"></span><span class="cursor">|</span></h2>
+            <p class="summary" data-i18n="hero_summary">
+                Lebih dari 5 tahun pengalaman membangun solusi full-stack, mulai dari antarmuka pengguna yang interaktif hingga solusi backend skala besar dan database kompleks. Berfokus pada kinerja, keamanan, dan skalabilitas.
+            </p>
+            <div class="cta-buttons">
+                <a href="#proyek" class="btn btn-primary" data-i18n="btn_projects">Lihat Proyek</a>
+                <a href="https://wa.me/6285798835322" target="_blank" class="btn btn-outline"><i class="fab fa-whatsapp"></i> <span data-i18n="btn_whatsapp">Hubungi via WA</span></a>
+            </div>
+        </div>
+        <div class="hero-graphic">
+            <div class="code-window fade-in">
+                <div class="window-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                </div>
+                <div class="window-body">
+                    <pre><code><span class="keyword">class</span> <span class="class-name">Developer</span>:
+    <span class="keyword">def</span> <span class="function">__init__</span>(self):
+        self.name = <span class="string">"Mahmudin"</span>
+        self.role = <span class="string">"Fullstack Developer"</span>
+        self.focus = [<span class="string">"Frontend Development"</span>, <span class="string">"Backend Development"</span>, <span class="string">"API Integration"</span>]
+        
+    <span class="keyword">def</span> <span class="function">build</span>(self):
+        <span class="keyword">return</span> <span class="string">"Scalable & Secure Solutions"</span></code></pre>
+                </div>
+            </div>
+        </div>
+        </div>
+        <a href="#tentang" class="scroll-indicator" aria-label="Gulir ke bawah">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span data-i18n="scroll_down">Gulir ke bawah</span>
+            <i class="fas fa-chevron-down bounce"></i>
+        </a>
+    </section>
+
+    <!-- About Section -->
+    <section id="tentang" class="about scroll-reveal">
+        <div class="container">
+            <h2 class="section-title" data-i18n="about_title">Tentang Saya</h2>
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://mhn20.github.io/portfolio/images/profile.jpg" alt="Mahmudin" class="img-fluid">
+                    <div class="image-border"></div>
+                </div>
+                <div class="about-text" data-i18n="about_desc">
+                    <p>Saya adalah seorang <strong>Software Developer</strong> yang telah mendedikasikan lebih dari 5 tahun untuk menciptakan solusi perangkat lunak yang andal untuk sektor pemerintahan maupun swasta.</p>
+                    <p>Saya berspesialisasi di sisi <em>back-end</em>, mulai dari merancang skema database (Oracle/PostgreSQL) untuk memproses <em>big data</em>, membangun integrasi API berstandar internasional (seperti IATA NDC), hingga mengamankan ekosistem aplikasi melalui <em>Single Sign-On</em> (Keycloak).</p>
+                    <p>Saya selalu antusias memecahkan masalah sistem yang rumit dan memastikan bahwa kode yang saya tulis dapat dieksekusi dengan efisien dan didistribusikan secara aman menggunakan lingkungan <em>Docker</em> dan <em>Linux</em>.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-box">
+                        <h3>5+</h3>
+                        <p data-i18n="stat_exp">Tahun Pengalaman</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>10+</h3>
+                        <p data-i18n="stat_projects">Proyek Skala Enterprise</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>100%</h3>
+                        <p data-i18n="stat_quality">Komitmen Kualitas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="keahlian" class="skills scroll-reveal">
+        <div class="container">
+            <h2 class="section-title" data-i18n="skills_title">Keahlian Teknis</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fas fa-laptop-code icon-accent"></i>
+                    <h3 data-i18n="skill_frontend_title">Frontend Development</h3>
+                    <p data-i18n="skill_frontend_desc">Membangun antarmuka web yang responsif dan interaktif.</p>
+                    <div class="tech-tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="project-links" style="margin-top: auto; padding-top: 1.5rem;">
+                        <a href="frontend-development.html" class="btn-read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-server icon-accent"></i>
+                    <h3 data-i18n="skill_backend_title">Back-End & API</h3>
+                    <p data-i18n="skill_backend_desc">Pengembangan arsitektur RESTful API yang aman dan terukur.</p>
+                    <div class="tech-tags">
+                        <span>Python (Flask)</span>
+                        <span>PHP (CodeIgniter)</span>
+                    </div>
+                    <div class="project-links" style="margin-top: auto; padding-top: 1.5rem;">
+                        <a href="backend-api.html" class="btn-read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-database icon-accent"></i>
+                    <h3 data-i18n="skill_db_title">Database Management</h3>
+                    <p data-i18n="skill_db_desc">Desain relasi, optimasi <em>query</em>, Stored Procedures & Triggers.</p>
+                    <div class="tech-tags">
+                        <span>Oracle</span>
+                        <span>PostgreSQL</span>
+                        <span>MariaDB</span>
+                    </div>
+                    <div class="project-links" style="margin-top: auto; padding-top: 1.5rem;">
+                        <a href="database-management.html" class="btn-read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-network-wired icon-accent"></i>
+                    <h3 data-i18n="skill_devops_title">DevOps & Keamanan</h3>
+                    <p data-i18n="skill_devops_desc">Distribusi aplikasi terisolasi dan manajemen otentikasi tersentralisasi.</p>
+                    <div class="tech-tags">
+                        <span>Docker</span>
+                        <span>Linux Server</span>
+                        <span>SSO (Keycloak)</span>
+                    </div>
+                    <div class="project-links" style="margin-top: auto; padding-top: 1.5rem;">
+                        <a href="devops-security.html" class="btn-read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="proyek" class="projects scroll-reveal">
+        <div class="container">
+            <h2 class="section-title" data-i18n="projects_title">Rekam Jejak Proyek</h2>
+            <div class="project-grid">
+                
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?auto=format&fit=crop&w=800&q=80" alt="Integrasi API Maskapai">
+                    </div>
+                    <div class="project-content">
+                        <h3 data-i18n="p1_title">Integrasi API Maskapai (NDC)</h3>
+                        <p data-i18n="p1_desc">Mengintegrasikan standar IATA New Distribution Capability (NDC) API untuk memodifikasi layanan tambahan penerbangan. Diimplementasikan menggunakan Flask dan Bearer Token yang aman.</p>
+                        <div class="project-tech">
+                            <span>Python (Flask)</span>
+                            <span>Oracle</span>
+                            <span>Docker</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="project-airline-api.html" class="view-more btn-read-more"><span data-i18n="view_detail">Read More</span> <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Super Apps Puskeu Polri">
+                    </div>
+                    <div class="project-content">
+                        <h3 data-i18n="p2_title">Super Apps Puskeu Polri</h3>
+                        <p data-i18n="p2_desc">Membangun 6 modul ekosistem manajemen finansial instansi pemerintahan. Merancang arsitektur DBMS untuk otomasi kalkulasi data personel secara efisien dan mengamankan aplikasi via SSO Keycloak.</p>
+                        <div class="project-tech">
+                            <span>PHP (Laravel)</span>
+                            <span>Python (Django)</span>
+                            <span>Oracle</span>
+                            <span>Keycloak</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="project-puskeu-polri.html" class="view-more btn-read-more"><span data-i18n="view_detail">Detail</span> <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?auto=format&fit=crop&w=800&q=80" alt="Portal Royalti Musik">
+                    </div>
+                    <div class="project-content">
+                        <h3 data-i18n="p3_title">Portal Royalti Musik</h3>
+                        <p data-i18n="p3_desc">Membangun portal manajemen royalti dengan sistem Role-Based Access Control (RBAC). Membuat skrip otomasi ekstraksi data CSV untuk rekapitulasi pendapatan dan penarikan dana bulanan.</p>
+                        <div class="project-tech">
+                            <span>PHP</span>
+                            <span>Python</span>
+                            <span>MariaDB</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="project-music-royalty.html" class="view-more btn-read-more"><span data-i18n="view_detail">Detail</span> <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=800&q=80" alt="Penerjemah Bahasa Daerah">
+                    </div>
+                    <div class="project-content">
+                        <h3 data-i18n="p4_title">Platform Edukasi Yotowawa</h3>
+                        <p data-i18n="p4_desc">Membangun platform linguistik terpadu untuk digitalisasi dan translasi bahasa daerah (Meher, Woirata) yang dilengkapi dengan sistem Text-to-Speech real-time dan modul interaktif.</p>
+                        <div class="project-tech">
+                            <span>CodeIgniter</span>
+                            <span>MySQL</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="project-yotowawa.html" class="view-more btn-read-more"><span data-i18n="view_detail">Detail</span> <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <!-- Additional Image Gallery -->
+            <h3 class="subsection-title" data-i18n="gallery_title">Galeri Antarmuka & Ekplorasi UI Lainnya</h3>
+            <div class="gallery-grid">
+                <div class="monitor-display">
+                    <div class="window-header">
+                        <div class="window-dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <span class="window-title">ui_exploration_1.png</span>
+                    </div>
+                    <img src="images/project-airline-api-auth.png" alt="Screenshot 1">
+                </div>
+                <div class="monitor-display">
+                    <div class="window-header">
+                        <div class="window-dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <span class="window-title">ui_exploration_2.jpg</span>
+                    </div>
+                    <img src="images/project-airline-api-refreshtoken.png" alt="Screenshot 2">
+                </div>
+                <div class="monitor-display">
+                    <div class="window-header">
+                        <div class="window-dots">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <span class="window-title">ui_exploration_3.jpg</span>
+                    </div>
+                    <img src="images/ndc-airshopping.png" alt="Screenshot 3">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Image Modal for Gallery -->
+    <div id="galleryModal" class="modal-gallery">
+        <span class="modal-gallery-close">&times;</span>
+        <img class="modal-gallery-content" id="modalImg">
+    </div>
+
+    <!-- Contact Section -->
+    <section id="kontak" class="contact scroll-reveal">
+        <div class="container text-center">
+            <h2 class="section-title" data-i18n="contact_title">Mari Berkolaborasi</h2>
+            <p class="contact-text" data-i18n="contact_desc">Saya selalu terbuka untuk mendiskusikan peluang baru, tantangan pengembangan backend, atau potensi kolaborasi dalam pengembangan perangkat lunak.</p>
+            
+            <div class="contact-form-container">
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <label for="name" data-i18n="form_name">Nama</label>
+                        <input type="text" id="name" required placeholder="Nama Lengkap Anda">
+                    </div>
+                    <div class="form-group">
+                        <label for="email" data-i18n="form_email">Email</label>
+                        <input type="email" id="email" required placeholder="Alamat Email Anda">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject" data-i18n="form_subject">Subjek</label>
+                        <input type="text" id="subject" required placeholder="Topik Kerjasama">
+                    </div>
+                    <div class="form-group">
+                        <label for="message" data-i18n="form_message">Pesan</label>
+                        <textarea id="message" rows="5" required placeholder="Tuliskan pesan Anda di sini..."></textarea>
+                    </div>
+                    <div class="contact-buttons" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem;">
+                        <button type="button" id="btnWA" class="btn btn-outline" style="justify-content: center; background: #25d366; color: white; border-color: #25d366;">
+                            <i class="fab fa-whatsapp"></i> <span data-i18n="btn_wa_large">Chat WhatsApp</span>
+                        </button>
+                        <button type="button" id="btnEmail" class="btn btn-primary" style="justify-content: center;">
+                            <i class="fas fa-envelope"></i> <span data-i18n="btn_email">Kirim Email</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+            
+            
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/mahmudin-295083114/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/mhn20" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <button id="back-to-top" title="Kembali ke atas"><i class="fas fa-chevron-up"></i></button>
+
+    <!-- Footer -->
+    <footer>
+        <p data-i18n="footer_text">&copy; 2026 Mahmudin. Dibangun dengan fokus pada efisiensi & desain minimalis.</p>
     </footer>
 
-    <script src="js/style.js"></script>
-
-    <script src="pflip/js/libs/jquery.min.js" type="text/javascript"></script>
-    <script src="pflip/js/pdfflip.js" type="text/javascript"></script>
-  </body>
+    <script src="script.js"></script>
+</body>
 </html>

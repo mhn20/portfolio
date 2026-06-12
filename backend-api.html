@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Keahlian - Back-End & API | Mahmudin</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-detail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body class="detail-page">
+    <nav class="nav-detail">
+        <div class="container">
+            <a href="index.html#keahlian" class="btn-back">
+                <i class="fas fa-arrow-left"></i> <span data-i18n="detail_back">Kembali</span>
+            </a>
+            <div class="lang-switch">
+                <button class="lang-btn" onclick="changeLanguage('id')" id="lang-id">ID</button>
+                <button class="lang-btn" onclick="changeLanguage('en')" id="lang-en">EN</button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="detail-hero">
+        <div class="container">
+            <div class="hero-content-detail">
+                <div class="icon-box-large">
+                    <i class="fas fa-server"></i>
+                </div>
+                <h1 data-i18n="api_title">Back-End & API Development</h1>
+                <p class="subtitle" data-i18n="api_subtitle">Merancang fondasi digital yang kuat, aman, dan berperforma tinggi.</p>
+                <div class="tech-tags-large">
+                    <span>Python (Flask)</span>
+                    <span>PHP (CodeIgniter)</span>
+                    <span>IATA NDC API</span>
+                    <span>RESTful Architecture</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container detail-content">
+        <section class="info-section">
+            <h2 data-i18n="api_info_title">Ringkasan Keahlian</h2>
+            <p data-i18n="api_info_desc">Saya memiliki spesialisasi dalam membangun arsitektur server-side yang menangani logika bisnis kompleks dan integrasi data skala besar. Fokus utama saya adalah menciptakan API yang tidak hanya fungsional, tetapi juga terdokumentasi dengan baik, aman dengan standar industri, dan mudah untuk dikembangkan di masa depan.</p>
+        </section>
+
+        <section class="grid-detail">
+            <div class="detail-card">
+                <h3><i class="fas fa-rocket"></i> <span data-i18n="api_card1_title">Optimasi Kinerja</span></h3>
+                <p data-i18n="api_card1_desc">Implementasi caching, optimasi query database, dan manajemen resource server untuk memastikan waktu respon API tetap di bawah 200ms bahkan dalam beban tinggi.</p>
+            </div>
+            <div class="detail-card">
+                <h3><i class="fas fa-shield-alt"></i> <span data-i18n="api_card2_title">Keamanan API</span></h3>
+                <p data-i18n="api_card2_desc">Menerapkan standar keamanan seperti OAuth2, JWT (JSON Web Tokens), dan integrasi dengan Keycloak untuk autentikasi dan otorisasi yang aman.</p>
+            </div>
+            <div class="detail-card">
+                <h3><i class="fas fa-plug"></i> <span data-i18n="api_card3_title">Integrasi Pihak Ketiga</span></h3>
+                <p data-i18n="api_card3_desc">Pengalaman luas dalam mengintegrasikan berbagai API pihak ketiga, termasuk sistem pembayaran, layanan logistik, dan standar penerbangan internasional (IATA NDC).</p>
+            </div>
+        </section>
+
+        <section class="implementation-steps">
+            <h2 data-i18n="api_workflow_title">Metode Kerja</h2>
+            <div class="timeline">
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <div class="step-info">
+                        <h4 data-i18n="api_step1_title">Perancangan Arsitektur</h4>
+                        <p data-i18n="api_step1_desc">Mendefinisikan skema data dan alur logika bisnis sebelum penulisan kode dimulai.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">02</div>
+                    <div class="step-info">
+                        <h4 data-i18n="api_step2_title">Pengembangan & Testing</h4>
+                        <p data-i18n="api_step2_desc">Coding dengan prinsip Clean Code dan melakukan Unit Testing secara berkala.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <div class="step-info">
+                        <h4 data-i18n="api_step3_title">Deployment & Monitoring</h4>
+                        <p data-i18n="api_step3_desc">Otomasi deployment menggunakan Docker dan memantau kesehatan server secara real-time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p data-i18n="footer_rights">&copy; 2026 Mahmudin. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script-detail.js"></script>
+</body>
+</html>

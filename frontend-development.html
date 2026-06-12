@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Keahlian - Frontend Development | Mahmudin</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-detail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        .lang-switch {
+            display: flex;
+            gap: 5px;
+            margin-left: auto;
+        }
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #cbd5e1;
+            cursor: pointer;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            transition: all 0.3s ease;
+        }
+        .lang-btn.active {
+            background: #3b82f6;
+            color: white;
+            border-color: #3b82f6;
+        }
+        .nav-detail .container {
+            display: flex;
+            align-items: center;
+        }
+        @media (max-width: 768px) {
+            .grid-detail {
+                display: grid;
+                grid-template-columns: 1fr !important;
+            }
+            .detail-hero h1 {
+                font-size: 2rem;
+            }
+            .step {
+                flex-direction: column;
+                text-align: center;
+            }
+            .step-number {
+                margin: 0 auto 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="detail-page">
+    <nav class="nav-detail">
+        <div class="container">
+            <a href="index.html#keahlian" class="btn-back">
+                <i class="fas fa-arrow-left"></i> <span data-i18n="detail_back">Kembali</span>
+            </a>
+            <div class="lang-switch">
+                <button class="lang-btn" onclick="changeLanguage('id')" id="lang-id">ID</button>
+                <button class="lang-btn" onclick="changeLanguage('en')" id="lang-en">EN</button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="detail-hero">
+        <div class="container">
+            <div class="hero-content-detail">
+                <div class="icon-box-large">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <h1 data-i18n="frontend_title">Frontend Development</h1>
+                <p class="subtitle" data-i18n="frontend_subtitle">Membangun antarmuka pengguna yang responsif, interaktif, dan berorientasi pada pengalaman pengguna.</p>
+                <div class="tech-tags-large">
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>JavaScript (ES6+)</span>
+                    <span>Responsive Design</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container detail-content">
+        <section class="info-section">
+            <h2 data-i18n="frontend_info_title">Filosofi Antarmuka</h2>
+            <p data-i18n="frontend_info_desc">Saya berfokus pada pembuatan antarmuka yang bersih dan intuitif. Menggunakan standar web modern (HTML5, CSS3, dan ES6+), saya memastikan aplikasi dapat diakses dengan baik di berbagai perangkat, mulai dari ponsel cerdas hingga desktop layar lebar.</p>
+        </section>
+
+        <section class="grid-detail">
+            <div class="detail-card">
+                <h3><i class="fas fa-mobile-alt"></i> <span data-i18n="frontend_card1_title">Responsive Design</span></h3>
+                <p data-i18n="frontend_card1_desc">Menggunakan CSS Grid, Flexbox, dan media queries untuk memastikan tata letak yang adaptif dan optimal di semua ukuran layar.</p>
+            </div>
+            <div class="detail-card">
+                <h3><i class="fas fa-magic"></i> <span data-i18n="frontend_card2_title">Interaktivitas Modern</span></h3>
+                <p data-i18n="frontend_card2_desc">Mengimplementasikan logika sisi klien yang kompleks dengan JavaScript murni atau framework untuk meningkatkan keterlibatan pengguna.</p>
+            </div>
+            <div class="detail-card">
+                <h3><i class="fas fa-search"></i> <span data-i18n="frontend_card3_title">Aksesibilitas & SEO</span></h3>
+                <p data-i18n="frontend_card3_desc">Menulis kode semantik yang ramah terhadap mesin pencari dan perangkat pembaca layar (screen readers).</p>
+            </div>
+        </section>
+
+        <section class="implementation-steps">
+            <h2 data-i18n="frontend_workflow_title">Metodologi Frontend</h2>
+            <div class="timeline">
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <div class="step-info">
+                        <h4 data-i18n="frontend_step1_title">Wireframing & Prototyping</h4>
+                        <p data-i18n="frontend_step1_desc">Merancang tata letak dan alur navigasi sebelum mulai menulis kode CSS.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">02</div>
+                    <div class="step-info">
+                        <h4 data-i18n="frontend_step2_title">Iterasi Komponen</h4>
+                        <p data-i18n="frontend_step2_desc">Membangun elemen UI secara modular agar mudah dikelola dan digunakan kembali.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <div class="step-info">
+                        <h4 data-i18n="frontend_step3_title">Optimasi Aset</h4>
+                        <p data-i18n="frontend_step3_desc">Mengompresi gambar dan meminimalkan ukuran file kode untuk waktu muat yang instan.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p data-i18n="footer_rights">&copy; 2026 Mahmudin. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script-detail.js"></script>
+</body>
+</html>

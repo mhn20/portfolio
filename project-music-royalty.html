@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Proyek - Music Royalty Portal | Mahmudin</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-detail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        .lang-switch {
+            display: flex;
+            gap: 5px;
+            margin-left: auto;
+        }
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #cbd5e1;
+            cursor: pointer;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            transition: all 0.3s ease;
+        }
+        .lang-btn.active {
+            background: #3b82f6;
+            color: white;
+            border-color: #3b82f6;
+        }
+        .nav-detail .container {
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body class="detail-page">
+    <nav class="nav-detail">
+        <div class="container">
+            <a href="index.html#proyek" class="btn-back">
+                <i class="fas fa-arrow-left"></i> <span data-i18n="detail_back">Kembali</span>
+            </a>
+            <div class="lang-switch">
+                <button class="lang-btn" onclick="changeLanguage('id')" id="lang-id">ID</button>
+                <button class="lang-btn" onclick="changeLanguage('en')" id="lang-en">EN</button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="detail-hero">
+        <div class="container">
+            <div class="hero-content-detail">
+                <div class="icon-box-large">
+                    <i class="fas fa-music"></i>
+                </div>
+                <h1 data-i18n="p_music_title">Portal Royalti Musik</h1>
+                <p class="subtitle" data-i18n="p_music_subtitle">Manajemen transparansi pendapatan karya musik berbasis RBAC.</p>
+                <div class="tech-tags-large">
+                    <span>PHP</span>
+                    <span>Python</span>
+                    <span>MariaDB</span>
+                    <span>RBAC</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container detail-content">
+        <section class="info-section">
+            <h2 data-i18n="p_music_info_title">Ringkasan Proyek</h2>
+            <p data-i18n="p_music_info_desc">Portal ini dirancang untuk memudahkan manajemen distribusi royalti bagi pencipta lagu dan produser. Fitur utama mencakup sistem Role-Based Access Control (RBAC) yang ketat dan otomasi pengolahan data mentah dari berbagai platform streaming menggunakan Python untuk memastikan keakuratan laporan keuangan.</p>
+        </section>
+
+        <section class="grid-detail">
+            <div class="detail-card">
+                <h3><i class="fas fa-user-shield"></i> <span data-i18n="p_music_card1_title">Keamanan RBAC</span></h3>
+                <p data-i18n="p_music_card1_desc">Memastikan akses data finansial hanya dapat dikelola oleh personil yang memiliki otorisasi sesuai peran mereka.</p>
+            </div>
+            <div class="detail-card">
+                <h3><i class="fas fa-file-csv"></i> <span data-i18n="p_music_card2_title">Otomasi Data CSV</span></h3>
+                <p data-i18n="p_music_card2_desc">Skrip Python otomatis yang mengekstrak dan membersihkan data pendapatan bulanan dari berbagai sumber platform.</p>
+            </div>
+            <div class="detail-card">
+                <h3><i class="fas fa-hand-holding-usd"></i> <span data-i18n="p_music_card3_title">Transparansi Dana</span></h3>
+                <p data-i18n="p_music_card3_desc">Sistem pelacakan real-time untuk penarikan dana (withdrawals) dan rekapitulasi pendapatan bulanan.</p>
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <h2 class="subsection-title" data-i18n="p_music_gallery_title">Galeri Antarmuka Proyek</h2>
+            <div class="gallery-grid">
+                <img src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?auto=format&fit=crop&w=800&q=80" alt="Music Dashboard">
+                <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=800&q=80" alt="Royalty Calculation Script">
+                <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80" alt="User Management RBAC">
+            </div>
+        </section>
+
+        <section class="implementation-steps">
+            <h2 data-i18n="p_music_workflow_title">Langkah Kerja</h2>
+            <div class="timeline">
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <div class="step-info">
+                        <h4 data-i18n="p_music_step1_title">Analisis Struktur Data</h4>
+                        <p data-i18n="p_music_step1_desc">Menyelaraskan format laporan dari berbagai platform musik ke dalam skema MariaDB.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">02</div>
+                    <div class="step-info">
+                        <h4 data-i18n="p_music_step2_title">Pengembangan Skrip</h4>
+                        <p data-i18n="p_music_step2_desc">Pembuatan skrip otomasi menggunakan Python untuk mempercepat proses rekapitulasi data.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <div class="step-info">
+                        <h4 data-i18n="p_music_step3_title">Portal Integration</h4>
+                        <p data-i18n="p_music_step3_desc">Integrasi back-end dengan dashboard antarmuka pengguna untuk visualisasi data.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p data-i18n="footer_rights">&copy; 2026 Mahmudin. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Image Modal for Gallery -->
+    <div id="galleryModal" class="modal-gallery">
+        <span class="modal-gallery-close">&times;</span>
+        <img class="modal-gallery-content" id="modalImg">
+    </div>
+
+    <script src="script-detail.js"></script>
+</body>
+</html>

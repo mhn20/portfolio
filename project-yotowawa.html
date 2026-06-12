@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Proyek - Yotowawa Education Platform | Mahmudin</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-detail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        .lang-switch {
+            display: flex;
+            gap: 5px;
+            margin-left: auto;
+        }
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #cbd5e1;
+            cursor: pointer;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            transition: all 0.3s ease;
+        }
+        .lang-btn.active {
+            background: #3b82f6;
+            color: white;
+            border-color: #3b82f6;
+        }
+        .nav-detail .container {
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body class="detail-page">
+    <nav class="nav-detail">
+        <div class="container">
+            <a href="index.html#proyek" class="btn-back">
+                <i class="fas fa-arrow-left"></i> <span data-i18n="detail_back">Kembali</span>
+            </a>
+            <div class="lang-switch">
+                <button class="lang-btn" onclick="changeLanguage('id')" id="lang-id">ID</button>
+                <button class="lang-btn" onclick="changeLanguage('en')" id="lang-en">EN</button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="detail-hero">
+        <div class="container">
+            <div class="hero-content-detail">
+                <div class="icon-box-large">
+                    <i class="fas fa-book-reader"></i>
+                </div>
+                <h1 data-i18n="p_yotowawa_title">Platform Edukasi Yotowawa</h1>
+                <p class="subtitle" data-i18n="p_yotowawa_subtitle">Digitalisasi bahasa daerah dan platform pembelajaran interaktif.</p>
+                <div class="tech-tags-large">
+                    <span>CodeIgniter</span>
+                    <span>MySQL</span>
+                    <span>JavaScript</span>
+                    <span>TTS API</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container detail-content">
+        <section class="info-section">
+            <h2 data-i18n="p_yotowawa_info_title">Tujuan Proyek</h2>
+            <p data-i18n="p_yotowawa_info_desc">Yotowawa adalah platform linguistik terpadu untuk digitalisasi dan translasi bahasa daerah Meher dan Woirata. Proyek ini mencakup pengembangan sistem Text-to-Speech (TTS) real-time dan modul pembelajaran interaktif untuk melestarikan kekayaan budaya lokal melalui teknologi web modern.</p>
+        </section>
+
+        <section class="grid-detail">
+            <div class="detail-card">
+                <h3><i class="fas fa-language"></i> <span data-i18n="p_yotowawa_card1_title">Digitalisasi Bahasa</span></h3>
+                <p data-i18n="p_yotowawa_card1_desc">Penyimpanan kamus dan struktur tata bahasa daerah dalam database MySQL yang terstruktur.</p>
+            </div>
+            <div class="detail-card">
+                <h3><i class="fas fa-volume-up"></i> <span data-i18n="p_yotowawa_card2_title">Real-time TTS</span></h3>
+                <p data-i18n="p_yotowawa_card2_desc">Implementasi teknologi Text-to-Speech untuk membantu pengguna mendengarkan pengucapan kata dalam bahasa daerah secara akurat.</p>
+            </div>
+            <div class="detail-card">
+                <h3><i class="fas fa-gamepad"></i> <span data-i18n="p_yotowawa_card3_title">Modul Interaktif</span></h3>
+                <p data-i18n="p_yotowawa_card3_desc">Fitur kuis dan materi pembelajaran yang dirancang untuk menarik minat generasi muda dalam mempelajari bahasa daerah.</p>
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <h2 class="subsection-title" data-i18n="p_yotowawa_gallery_title">Galeri Antarmuka Proyek</h2>
+            <div class="gallery-grid">
+                <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=800&q=80" alt="Education Portal Home">
+                <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=800&q=80" alt="Interactive Learning Module">
+                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80" alt="Linguistic Database">
+            </div>
+        </section>
+
+        <section class="implementation-steps">
+            <h2 data-i18n="p_yotowawa_workflow_title">Alur Pengembangan</h2>
+            <div class="timeline">
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <div class="step-info">
+                        <h4 data-i18n="p_yotowawa_step1_title">Pengumpulan Data</h4>
+                        <p data-i18n="p_yotowawa_step1_desc">Bekerja sama dengan ahli bahasa untuk mengumpulkan database kata dan fonetik.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">02</div>
+                    <div class="step-info">
+                        <h4 data-i18n="p_yotowawa_step2_title">Penyusunan Sistem</h4>
+                        <p data-i18n="p_yotowawa_step2_desc">Membangun core platform menggunakan CodeIgniter dengan optimasi query yang cepat.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <div class="step-info">
+                        <h4 data-i18n="p_yotowawa_step3_title">Uji Pengguna</h4>
+                        <p data-i18n="p_yotowawa_step3_desc">Melakukan pengujian langsung dengan komunitas lokal untuk validasi translasi dan audio.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p data-i18n="footer_rights">&copy; 2026 Mahmudin. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Image Modal for Gallery -->
+    <div id="galleryModal" class="modal-gallery">
+        <span class="modal-gallery-close">&times;</span>
+        <img class="modal-gallery-content" id="modalImg">
+    </div>
+
+    <script src="script-detail.js"></script>
+</body>
+</html>
