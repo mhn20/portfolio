@@ -2,7 +2,7 @@ const phrasesMap = {
     id: ["Fullstack Developer.", "Integrator API."],
     en: ["Fullstack Developer.", "API Integrator."]
 };
-let phrases = phrasesMap.id;
+let phrases = phrasesMap.en;
 let currentPhraseIndex = 0; let currentCharIndex = 0; let isDeleting = false; let typeSpeed = 100;
 
 const translations = {
@@ -91,7 +91,7 @@ function typeWriter() {
 }
 
 document.addEventListener('DOMContentLoaded', () => { 
-    const savedLang = localStorage.getItem('preferredLanguage') || 'id';
+    const savedLang = localStorage.getItem('preferredLanguage') || 'en';
     changeLanguage(savedLang);
     if(document.getElementById('typewriter')){ setTimeout(typeWriter, 1000); } 
 

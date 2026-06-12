@@ -349,7 +349,7 @@ function changeLanguage(lang) {
 
 document.addEventListener('DOMContentLoaded', () => {
     // Language Initializer
-    const savedLang = localStorage.getItem('preferredLanguage') || 'id';
+    const savedLang = localStorage.getItem('preferredLanguage') || 'en';
     changeLanguage(savedLang);
 
     // Animasi masuk untuk elemen-elemen detail
