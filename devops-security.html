@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Keahlian - DevOps & Keamanan | Mahmudin</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-detail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        .lang-switch {
+            display: flex;
+            gap: 5px;
+            margin-left: auto;
+        }
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #cbd5e1;
+            cursor: pointer;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            transition: all 0.3s ease;
+        }
+        .lang-btn.active {
+            background: #3b82f6;
+            color: white;
+            border-color: #3b82f6;
+        }
+        .nav-detail .container {
+            display: flex;
+            align-items: center;
+        }
+        @media (max-width: 768px) {
+            .grid-detail {
+                display: grid;
+                grid-template-columns: 1fr !important;
+            }
+            .detail-hero h1 {
+                font-size: 2rem;
+            }
+            .step {
+                flex-direction: column;
+                text-align: center;
+            }
+            .step-number {
+                margin: 0 auto 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="detail-page">
+    <nav class="nav-detail">
+        <div class="container">
+            <a href="index.html#keahlian" class="btn-back">
+                <i class="fas fa-arrow-left"></i> <span data-i18n="detail_back">Kembali</span>
+            </a>
+            <div class="lang-switch">
+                <button class="lang-btn" onclick="changeLanguage('id')" id="lang-id">ID</button>
+                <button class="lang-btn" onclick="changeLanguage('en')" id="lang-en">EN</button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="detail-hero">
+        <div class="container">
+            <div class="hero-content-detail">
+                <div class="icon-box-large">
+                    <i class="fas fa-shield-halved"></i>
+                </div>
+                <h1 data-i18n="devops_title">DevOps & Security Ops</h1>
+                <p class="subtitle" data-i18n="devops_subtitle">Menjamin stabilitas aplikasi melalui infrastruktur otomatis dan keamanan berlapis.</p>
+                <div class="tech-tags-large">
+                    <span>Docker</span>
+                    <span>Keycloak</span>
+                    <span>Linux Administration</span>
+                    <span>CI/CD</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container detail-content">
+        <section class="info-section">
+            <h2 data-i18n="devops_info_title">Visi Infrastruktur</h2>
+            <p data-i18n="devops_info_desc">Dalam dunia pengembangan modern, kecepatan distribusi aplikasi harus diimbangi dengan keamanan yang ketat. Saya fokus pada kontainerisasi aplikasi menggunakan Docker untuk memastikan konsistensi lingkungan, serta mengelola sistem identitas terpusat (IAM) untuk mengamankan akses data sensitif di seluruh platform.</p>
+        </section>
+
+        <section class="grid-detail">
+            <div class="detail-card">
+                <h3><i class="fab fa-docker"></i> <span data-i18n="devops_card1_title">Kontainerisasi</span></h3>
+                <p data-i18n="devops_card1_desc">Mengemas aplikasi dan dependensinya ke dalam container Docker agar dapat berjalan dengan identik di lingkungan pengembangan maupun produksi.</p>
+            </div>
+            <div class="detail-card">
+                <h3><i class="fas fa-key"></i> <span data-i18n="devops_card2_title">Identity Management</span></h3>
+                <p data-i18n="devops_card2_desc">Implementasi Keycloak sebagai solusi Single Sign-On (SSO) untuk manajemen pengguna, autentikasi multifaktor (MFA), dan otorisasi berbasis peran (RBAC).</p>
+            </div>
+            <div class="detail-card">
+                <h3><i class="fas fa-user-shield"></i> <span data-i18n="devops_card3_title">Server Hardening</span></h3>
+                <p data-i18n="devops_card3_desc">Konfigurasi keamanan server Linux, firewall, dan enkripsi SSL/TLS untuk melindungi sistem dari serangan eksternal dan kebocoran data.</p>
+            </div>
+        </section>
+
+        <section class="implementation-steps">
+            <h2 data-i18n="devops_workflow_title">Metodologi DevOps</h2>
+            <div class="timeline">
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <div class="step-info">
+                        <h4 data-i18n="devops_step1_title">Automated Environment</h4>
+                        <p data-i18n="devops_step1_desc">Mengatur script setup otomatis agar server siap digunakan dalam hitungan menit secara konsisten.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">02</div>
+                    <div class="step-info">
+                        <h4 data-i18n="devops_step2_title">Secure Auth Setup</h4>
+                        <p data-i18n="devops_step2_desc">Mengintegrasikan aplikasi dengan protokol keamanan standar seperti OpenID Connect dan SAML.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <div class="step-info">
+                        <h4 data-i18n="devops_step3_title">Continuous Monitoring</h4>
+                        <p data-i18n="devops_step3_desc">Menerapkan sistem logging dan alert untuk mendeteksi anomali keamanan atau kegagalan sistem secara dini.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p data-i18n="footer_rights">&copy; 2026 Mahmudin. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script-detail.js"></script>
+</body>
+</html>

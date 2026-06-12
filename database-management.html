@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Keahlian - Database Management | Mahmudin</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-detail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        .lang-switch {
+            display: flex;
+            gap: 5px;
+            margin-left: auto;
+        }
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #cbd5e1;
+            cursor: pointer;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            transition: all 0.3s ease;
+        }
+        .lang-btn.active {
+            background: #3b82f6;
+            color: white;
+            border-color: #3b82f6;
+        }
+        .nav-detail .container {
+            display: flex;
+            align-items: center;
+        }
+        @media (max-width: 768px) {
+            .grid-detail {
+                display: grid;
+                grid-template-columns: 1fr !important;
+            }
+            .detail-hero h1 {
+                font-size: 2rem;
+            }
+            .step {
+                flex-direction: column;
+                text-align: center;
+            }
+            .step-number {
+                margin: 0 auto 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="detail-page">
+    <nav class="nav-detail">
+        <div class="container">
+            <a href="index.html#keahlian" class="btn-back">
+                <i class="fas fa-arrow-left"></i> <span data-i18n="detail_back">Kembali</span>
+            </a>
+            <div class="lang-switch">
+                <button class="lang-btn" onclick="changeLanguage('id')" id="lang-id">ID</button>
+                <button class="lang-btn" onclick="changeLanguage('en')" id="lang-en">EN</button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="detail-hero">
+        <div class="container">
+            <div class="hero-content-detail">
+                <div class="icon-box-large">
+                    <i class="fas fa-database"></i>
+                </div>
+                <h1 data-i18n="db_title">Database Management & Design</h1>
+                <p class="subtitle" data-i18n="db_subtitle">Mengelola data sebagai aset paling berharga dengan integritas dan kecepatan tinggi.</p>
+                <div class="tech-tags-large">
+                    <span>Oracle</span>
+                    <span>PostgreSQL</span>
+                    <span>MariaDB</span>
+                    <span>Stored Procedures</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container detail-content">
+        <section class="info-section">
+            <h2 data-i18n="db_info_title">Strategi Pengelolaan Data</h2>
+            <p data-i18n="db_info_desc">Saya percaya bahwa database yang dirancang dengan baik adalah jantung dari setiap sistem yang sukses. Pengalaman saya mencakup desain skema relasional yang kompleks, migrasi data skala besar tanpa downtime, serta penulisan prosedur tersimpan (Stored Procedures) dan pemicu (Triggers) untuk otomasi logika bisnis di level database.</p>
+        </section>
+
+        <section class="grid-detail">
+            <div class="detail-card">
+                <h3><i class="fas fa-bolt"></i> <span data-i18n="db_card1_title">Query Optimization</span></h3>
+                <p data-i18n="db_card1_desc">Menganalisis execution plan, mengimplementasikan indexing yang tepat, dan menulis ulang query yang tidak efisien untuk meningkatkan performa sistem secara keseluruhan.</p>
+            </div>
+            <div class="detail-card">
+                <h3><i class="fas fa-project-diagram"></i> <span data-i18n="db_card2_title">Schema Design</span></h3>
+                <p data-i18n="db_card2_desc">Merancang normalisasi data untuk menjaga integritas, namun tetap mempertimbangkan denormalisasi strategis untuk kebutuhan reporting dan Big Data.</p>
+            </div>
+            <div class="detail-card">
+                <h3><i class="fas fa-history"></i> <span data-i18n="db_card3_title">Backup & Recovery</span></h3>
+                <p data-i18n="db_card3_desc">Menyusun strategi pencadangan data berkala dan prosedur pemulihan bencana (Disaster Recovery) untuk memastikan ketersediaan data 24/7.</p>
+            </div>
+        </section>
+
+        <section class="implementation-steps">
+            <h2 data-i18n="db_workflow_title">Alur Kerja Database</h2>
+            <div class="timeline">
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <div class="step-info">
+                        <h4 data-i18n="db_step1_title">Analisis Kebutuhan Data</h4>
+                        <p data-i18n="db_step1_desc">Memahami entitas dan relasi bisnis untuk menciptakan ERD (Entity Relationship Diagram) yang akurat.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">02</div>
+                    <div class="step-info">
+                        <h4 data-i18n="db_step2_title">Implementasi & Tuning</h4>
+                        <p data-i18n="db_step2_desc">Membangun struktur fisik database dan melakukan stress-test pada beban kerja tinggi.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <div class="step-info">
+                        <h4 data-i18n="db_step3_title">Monitoring & Audit</h4>
+                        <p data-i18n="db_step3_desc">Memantau kesehatan database secara real-time dan melakukan audit keamanan berkala.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p data-i18n="footer_rights">&copy; 2026 Mahmudin. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script-detail.js"></script>
+</body>
+</html>
