@@ -20,8 +20,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" defer></script>
-
 </head>
 <body>
     <!-- Navigation -->
@@ -275,39 +277,188 @@
 
             <!-- Additional Image Gallery -->
             <h3 class="subsection-title" data-i18n="gallery_title">Galeri Antarmuka & Ekplorasi UI Lainnya</h3>
-            <div class="gallery-grid">
-                <div class="monitor-display">
-                    <div class="window-header">
-                        <div class="window-dots">
-                            <span class="dot red"></span>
-                            <span class="dot yellow"></span>
-                            <span class="dot green"></span>
+
+            <!-- Category Tabs -->
+            <div class="gallery-tabs">
+                <button class="tab-btn active" data-filter="all" data-i18n="tab_all">Semua</button>
+                <button class="tab-btn" data-filter="ndc" data-i18n="tab_ndc">Airline API Integration (NDC)</button>
+                <button class="tab-btn" data-filter="puskeu" data-i18n="tab_puskeu">Super Apps Puskeu Polri</button>
+                <button class="tab-btn" data-filter="hype" data-i18n="tab_hype">Music Royalty Portal</button>
+                <button class="tab-btn" data-filter="ytw" data-i18n="tab_ytw">Yotowawa Education Platform</button>
+                <!-- Tambahkan kategori lain di sini jika diperlukan -->
+            </div>
+
+            <div id="gallery-carousel" class="owl-carousel owl-theme">
+                <!-- Item 1 (API) -->
+                <div class="item" data-category="ndc">
+                    <div class="monitor-display">
+                        <div class="window-header">
+                            <div class="window-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="window-title">auth-login.postman</span>
                         </div>
-                        <span class="window-title">ui_exploration_1.png</span>
+                        <img src="images/project-airline-api-auth.png" alt="Screenshot 1">
                     </div>
-                    <img src="images/project-airline-api-auth.png" alt="Screenshot 1">
                 </div>
-                <div class="monitor-display">
-                    <div class="window-header">
-                        <div class="window-dots">
-                            <span class="dot red"></span>
-                            <span class="dot yellow"></span>
-                            <span class="dot green"></span>
+                <!-- Item 2 (API) -->
+                <div class="item" data-category="ndc">
+                    <div class="monitor-display">
+                        <div class="window-header">
+                            <div class="window-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="window-title">token-refresh.json</span>
                         </div>
-                        <span class="window-title">ui_exploration_2.jpg</span>
+                        <img src="images/project-airline-api-refreshtoken.png" alt="Screenshot 2">
                     </div>
-                    <img src="images/project-airline-api-refreshtoken.png" alt="Screenshot 2">
                 </div>
-                <div class="monitor-display">
-                    <div class="window-header">
-                        <div class="window-dots">
-                            <span class="dot red"></span>
-                            <span class="dot yellow"></span>
-                            <span class="dot green"></span>
+                <!-- Item 3 (UI) -->
+                <div class="item" data-category="ndc">
+                    <div class="monitor-display">
+                        <div class="window-header">
+                            <div class="window-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="window-title">ndc-airshopping.xml</span>
                         </div>
-                        <span class="window-title">ui_exploration_3.jpg</span>
+                        <img src="images/ndc-airshopping.png" alt="Screenshot 3">
                     </div>
-                    <img src="images/ndc-airshopping.png" alt="Screenshot 3">
+                </div>
+                <!-- Tambahkan item lain di sini sesuai kategori -->
+                <div class="item" data-category="puskeu">
+                    <div class="monitor-display">
+                        <div class="window-header">
+                            <div class="window-dots"> <span class="dot red"></span> <span class="dot yellow"></span> <span class="dot green"></span> </div>
+                            <span class="window-title">auth-keycloak</span>
+                        </div>
+                        <img src="images/puskeu/auth-keycloak.png" alt="auth-keycloak">
+                    </div>
+                </div>
+                <div class="item" data-category="puskeu">
+                    <div class="monitor-display">
+                        <div class="window-header">
+                            <div class="window-dots"> <span class="dot red"></span> <span class="dot yellow"></span> <span class="dot green"></span> </div>
+                            <span class="window-title">auth-keycloak-dashboard</span>
+                        </div>
+                        <img src="images/puskeu/auth-keycloak-dashboard.png" alt="auth-keycloak-dashboard">
+                    </div>
+                </div>
+                <div class="item" data-category="puskeu">
+                    <div class="monitor-display">
+                        <div class="window-header">
+                            <div class="window-dots"> <span class="dot red"></span> <span class="dot yellow"></span> <span class="dot green"></span> </div>
+                            <span class="window-title">user-management</span>
+                        </div>
+                        <img src="images/puskeu/user-management.png" alt="user-management">
+                    </div>
+                </div>
+                <div class="item" data-category="puskeu">
+                    <div class="monitor-display">
+                        <div class="window-header">
+                            <div class="window-dots"> <span class="dot red"></span> <span class="dot yellow"></span> <span class="dot green"></span> </div>
+                            <span class="window-title">dashboard</span>
+                        </div>
+                        <img src="images/puskeu/dashboard.png" alt="dashboard">
+                    </div>
+                </div>
+                <div class="item" data-category="puskeu">
+                    <div class="monitor-display">
+                        <div class="window-header">
+                            <div class="window-dots"> <span class="dot red"></span> <span class="dot yellow"></span> <span class="dot green"></span> </div>
+                            <span class="window-title">gaji_&_tunkin</span>
+                        </div>
+                        <img src="images/puskeu/gaji_&_tunkin.png" alt="gaji_&_tunkin">
+                    </div>
+                </div>
+                <div class="item" data-category="puskeu">
+                    <div class="monitor-display">
+                        <div class="window-header">
+                            <div class="window-dots"> <span class="dot red"></span> <span class="dot yellow"></span> <span class="dot green"></span> </div>
+                            <span class="window-title">perwabkeu-kontraktual</span>
+                        </div>
+                        <img src="images/puskeu/perwabkeu-kontraktual.png" alt="perwabkeu-kontraktual">
+                    </div>
+                </div>
+                <div class="item" data-category="puskeu">
+                    <div class="monitor-display">
+                        <div class="window-header">
+                            <div class="window-dots"> <span class="dot red"></span> <span class="dot yellow"></span> <span class="dot green"></span> </div>
+                            <span class="window-title">pipk</span>
+                        </div>
+                        <img src="images/puskeu/pipk.png" alt="pipk">
+                    </div>
+                </div>
+                <div class="item" data-category="puskeu">
+                    <div class="monitor-display">
+                        <div class="window-header">
+                            <div class="window-dots"> <span class="dot red"></span> <span class="dot yellow"></span> <span class="dot green"></span> </div>
+                            <span class="window-title">sdm</span>
+                        </div>
+                        <img src="images/puskeu/sdm.png" alt="sdm">
+                    </div>
+                </div>
+                <!-- Tambahkan item lain di sini sesuai kategori -->
+                <div class="item" data-category="hype">
+                    <div class="monitor-display">
+                        <div class="window-header">
+                            <div class="window-dots"> <span class="dot red"></span> <span class="dot yellow"></span> <span class="dot green"></span> </div>
+                            <span class="window-title">form-login</span>
+                        </div>
+                        <img src="images/hypemusic/form-login.png" alt="form-login">
+                    </div>
+                </div>
+                <div class="item" data-category="hype">
+                    <div class="monitor-display">
+                        <div class="window-header">
+                            <div class="window-dots"> <span class="dot red"></span> <span class="dot yellow"></span> <span class="dot green"></span> </div>
+                            <span class="window-title">form-register</span>
+                        </div>
+                        <img src="images/hypemusic/form-register.png" alt="form-register">
+                    </div>
+                </div>
+                <div class="item" data-category="hype">
+                    <div class="monitor-display">
+                        <div class="window-header">
+                            <div class="window-dots"> <span class="dot red"></span> <span class="dot yellow"></span> <span class="dot green"></span> </div>
+                            <span class="window-title">form-profile</span>
+                        </div>
+                        <img src="images/hypemusic/form-profile.png" alt="form-profile">
+                    </div>
+                </div>
+                <!-- Tambahkan item lain di sini sesuai kategori -->
+                <div class="item" data-category="ytw">
+                    <div class="monitor-display">
+                        <div class="window-header">
+                            <div class="window-dots"> <span class="dot red"></span> <span class="dot yellow"></span> <span class="dot green"></span> </div>
+                            <span class="window-title">quiz-game</span>
+                        </div>
+                        <img src="images/community/quiz-game.png" alt="quiz-game">
+                    </div>
+                </div>
+                <div class="item" data-category="ytw">
+                    <div class="monitor-display">
+                        <div class="window-header">
+                            <div class="window-dots"> <span class="dot red"></span> <span class="dot yellow"></span> <span class="dot green"></span> </div>
+                            <span class="window-title">translator</span>
+                        </div>
+                        <img src="images/community/translator.png" alt="translator">
+                    </div>
+                </div>
+                <div class="item" data-category="ytw">
+                    <div class="monitor-display">
+                        <div class="window-header">
+                            <div class="window-dots"> <span class="dot red"></span> <span class="dot yellow"></span> <span class="dot green"></span> </div>
+                            <span class="window-title">tts-article</span>
+                        </div>
+                        <img src="images/community/tts-article.png" alt="tts-article">
+                    </div>
                 </div>
             </div>
 
@@ -320,6 +471,9 @@
         <span class="modal-gallery-close">&times;</span>
         <img class="modal-gallery-content" id="modalImg">
     </div>
+
+    <!-- Magnifying Glass for Gallery Images -->
+    <div id="magnifyingGlass" class="magnifying-glass"></div>
 
     <!-- Contact Section -->
     <section id="kontak" class="contact scroll-reveal">
@@ -371,6 +525,9 @@
         <p data-i18n="footer_text">&copy; 2026 Mahmudin. Dibangun dengan fokus pada efisiensi & desain minimalis.</p>
     </footer>
 
+    <!-- jQuery & Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

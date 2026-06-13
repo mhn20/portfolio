@@ -25,7 +25,7 @@ const translations = {
         view_detail: "Selengkapnya", gallery_title: "Galeri Antarmuka & Ekplorasi UI Lainnya",
         contact_title: "Mari Berkolaborasi", contact_desc: "Saya selalu terbuka untuk mendiskusikan peluang baru, tantangan pengembangan backend, atau potensi kolaborasi dalam pengembangan perangkat lunak.",
         btn_email: "Kirim Email", btn_wa_large: "Chat WhatsApp", footer_text: "© 2026 Mahmudin. Dibangun dengan fokus pada efisiensi & desain minimalis.",
-        form_name: "Nama", form_email: "Email", form_subject: "Subjek", form_message: "Pesan", btn_send: "Kirim Pesan"
+        form_name: "Nama", form_email: "Email", form_subject: "Subjek", form_message: "Pesan", btn_send: "Kirim Pesan", tab_all: "Semua", tab_api: "Backend & API", tab_ui: "UI/UX Design"
     },
     en: {
         nav_home: "Home", nav_about: "About", nav_skills: "Skills", nav_projects: "Projects", nav_contact: "Contact",
@@ -46,7 +46,7 @@ const translations = {
         view_detail: "Read More", gallery_title: "Interface Gallery & Other UI Explorations",
         contact_title: "Let's Collaborate", contact_desc: "I am always open to discussing new opportunities, backend development challenges, or potential collaborations in software development.",
         btn_email: "Send Email", btn_wa_large: "Chat WhatsApp", footer_text: "© 2026 Mahmudin. Built with a focus on efficiency & minimalist design.",
-        form_name: "Name", form_email: "Email", form_subject: "Subject", form_message: "Message", btn_send: "Send Message"
+        form_name: "Name", form_email: "Email", form_subject: "Subject", form_message: "Message", btn_send: "Send Message", tab_all: "All", tab_api: "Backend & API", tab_ui: "UI/UX Design"
     }
 };
 
@@ -173,21 +173,117 @@ document.addEventListener('DOMContentLoaded', () => {
         contactForm.addEventListener('submit', (e) => e.preventDefault());
     }
 
-    // Modal Galeri
+    // Modal Galeri (diperbarui untuk Owl Carousel)
     const modal = document.getElementById("galleryModal");
     if (modal) {
         const modalImg = document.getElementById("modalImg");
         const closeBtn = document.querySelector(".modal-gallery-close");
 
-        document.querySelectorAll('.gallery-grid img').forEach(img => {
-            img.addEventListener('click', () => {
-                modal.style.display = "flex";
-                modalImg.src = img.src;
-            });
+        $(document).on('click', '#gallery-carousel .item img', function() {
+            const clickedImg = this; // 'this' refers to the clicked img element
+            modal.style.display = "flex";
+            modalImg.src = clickedImg.src;
         });
 
         if (closeBtn) closeBtn.onclick = () => modal.style.display = "none";
         modal.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; };
+    }
+
+    // Magnifying Glass Logic for Gallery Images (diperbarui untuk Owl Carousel)
+    const magnifyingGlass = document.getElementById('magnifyingGlass');
+    if (magnifyingGlass && window.innerWidth >= 768) {
+        let currentHoveredImg = null; // Untuk melacak gambar yang sedang di-hover
+
+        $(document).on('mouseover', '#gallery-carousel .item img', function(e) {
+            currentHoveredImg = this; // Simpan referensi gambar yang sedang di-hover
+            magnifyingGlass.style.display = 'block';
+            $(this).css('cursor', 'none'); // Ubah kursor gambar menjadi 'none'
+
+            // Coba dapatkan gambar resolusi lebih tinggi untuk kualitas zoom yang lebih baik
+            // Ini spesifik untuk URL Unsplash dengan parameter 'w' dan 'q', akan diabaikan jika tidak ada
+            const fullSrc = $(this).attr('src').replace(/w=\d+&q=\d+/, 'w=1200&q=80'); 
+            magnifyingGlass.style.backgroundImage = `url('${fullSrc}')`;
+            
+            const zoomFactor = 2; // Tingkat perbesaran 200%
+            magnifyingGlass.style.backgroundSize = `${$(this).width() * zoomFactor}px ${$(this).height() * zoomFactor}px`;
+        }).on('mousemove', '#gallery-carousel .item img', function(e) {
+            // Pastikan kita masih menggerakkan mouse di atas gambar yang sama
+            if (currentHoveredImg !== this) return;
+
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left; // Posisi x relatif terhadap elemen gambar
+            const y = e.clientY - rect.top;  // Posisi y relatif terhadap elemen gambar
+
+            magnifyingGlass.style.left = `${e.clientX}px`;
+            magnifyingGlass.style.top = `${e.clientY}px`;
+
+            const zoomFactor = 2; // Harus cocok dengan faktor yang digunakan di mouseover
+            const bgPosX = (x * zoomFactor) - (magnifyingGlass.offsetWidth / 2);
+            const bgPosY = (y * zoomFactor) - (magnifyingGlass.offsetHeight / 2);
+            magnifyingGlass.style.backgroundPosition = `-${bgPosX}px -${bgPosY}px`;
+        }).on('mouseout', '#gallery-carousel .item img', function() {
+            // Reset hanya jika kita meninggalkan gambar yang sedang dilacak
+            if (currentHoveredImg === this) {
+                magnifyingGlass.style.display = 'none';
+                $(this).css('cursor', ''); // Kembalikan kursor default
+                currentHoveredImg = null;
+            }
+        });
+    }
+
+    // Owl Carousel Initialization & Filter Logic
+    const $owl = $('#gallery-carousel');
+    if ($owl.length > 0) {
+        // Simpan salinan asli semua item sebelum Owl Carousel diinisialisasi
+        const allGalleryItems = $owl.find('.item').clone();
+
+        const initGallery = () => {
+            $owl.owlCarousel({
+                loop: false,
+                margin: 20,
+                nav: true,
+                navText: ["<i class='fas fa-chevron-left'></i>", "<i class='fas fa-chevron-right'></i>"],
+                dots: true,
+                responsive: {
+                    0: { items: 1 },
+                    768: { items: 2 },
+                    1000: { items: 3 }
+                }
+            });
+        };
+
+        // Inisialisasi awal
+        initGallery();
+
+        // Filter Logic
+        $('.tab-btn').on('click', function() {
+            const filter = $(this).data('filter');
+            
+            if ($(this).hasClass('active')) return;
+
+            $('.tab-btn').removeClass('active');
+            $(this).addClass('active');
+
+            // Efek transisi filter pada Owl Carousel
+            $owl.css({ 'opacity': '0', 'transform': 'scale(0.95) translateY(10px)' });
+            
+            setTimeout(() => {
+                $owl.trigger('destroy.owl.carousel'); // Hancurkan instance lama
+                $owl.empty(); // Kosongkan kontainer dari item lama
+
+                if (filter === 'all') {
+                    $owl.append(allGalleryItems.clone());
+                } else {
+                    const filtered = allGalleryItems.filter(`[data-category="${filter}"]`).clone();
+                    $owl.append(filtered);
+                }
+
+                // Re-inisialisasi dengan item yang baru (yang sudah difilter)
+                initGallery();
+                
+                $owl.css({ 'opacity': '1', 'transform': 'scale(1) translateY(0)' });
+            }, 300);
+        });
     }
 });
 
