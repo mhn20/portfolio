@@ -25,7 +25,9 @@ const translations = {
         view_detail: "Selengkapnya", gallery_title: "Galeri Antarmuka & Ekplorasi UI Lainnya",
         contact_title: "Mari Berkolaborasi", contact_desc: "Saya selalu terbuka untuk mendiskusikan peluang baru, tantangan pengembangan backend, atau potensi kolaborasi dalam pengembangan perangkat lunak.",
         btn_email: "Kirim Email", btn_wa_large: "Chat WhatsApp", footer_text: "© 2026 Mahmudin. Dibangun dengan fokus pada efisiensi & desain minimalis.",
-        form_name: "Nama", form_email: "Email", form_subject: "Subjek", form_message: "Pesan", btn_send: "Kirim Pesan", tab_all: "Semua", tab_api: "Backend & API", tab_ui: "UI/UX Design"
+        form_name: "Nama", form_email: "Email", form_subject: "Subjek", form_message: "Pesan", btn_send: "Kirim Pesan", tab_all: "Semua", tab_api: "Backend & API", tab_ui: "UI/UX Design",
+        form_name_placeholder: "Nama Lengkap Anda", form_email_placeholder: "Alamat Email Anda", form_subject_placeholder: "Topik Kerjasama", form_message_placeholder: "Tuliskan pesan Anda di sini...",
+        wa_header: "*Pesan Baru dari Portfolio*"
     },
     en: {
         nav_home: "Home", nav_about: "About", nav_skills: "Skills", nav_projects: "Projects", nav_contact: "Contact",
@@ -46,7 +48,9 @@ const translations = {
         view_detail: "Read More", gallery_title: "Interface Gallery & Other UI Explorations",
         contact_title: "Let's Collaborate", contact_desc: "I am always open to discussing new opportunities, backend development challenges, or potential collaborations in software development.",
         btn_email: "Send Email", btn_wa_large: "Chat WhatsApp", footer_text: "© 2026 Mahmudin. Built with a focus on efficiency & minimalist design.",
-        form_name: "Name", form_email: "Email", form_subject: "Subject", form_message: "Message", btn_send: "Send Message", tab_all: "All", tab_api: "Backend & API", tab_ui: "UI/UX Design"
+        form_name: "Name", form_email: "Email", form_subject: "Subject", form_message: "Message", btn_send: "Send Message", tab_all: "All", tab_api: "Backend & API", tab_ui: "UI/UX Design",
+        form_name_placeholder: "Your Full Name", form_email_placeholder: "Your Email Address", form_subject_placeholder: "Collaboration Topic", form_message_placeholder: "Write your message here...",
+        wa_header: "*New Message from Portfolio*"
     }
 };
 
@@ -55,7 +59,11 @@ function changeLanguage(lang) {
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (translations[lang][key]) {
-            el.innerHTML = translations[lang][key];
+            if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                el.placeholder = translations[lang][key];
+            } else {
+                el.innerHTML = translations[lang][key];
+            }
         }
     });
     
@@ -155,12 +163,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const waNumber = "6285798835322";
             const emailTarget = "mahmudin222@gmail.com";
             
+            const lang = localStorage.getItem('preferredLanguage') || 'en';
+            const t = translations[lang];
+
             if (type === 'wa') {
-                const waMessage = `*Pesan Baru dari Portfolio*\n\n*Nama:* ${name}\n*Email:* ${email}\n*Subjek:* ${subject}\n\n*Pesan:*\n${message}`;
+                const waMessage = `${t.wa_header}\n\n*${t.form_name}:* ${name}\n*${t.form_email}:* ${email}\n*${t.form_subject}:* ${subject}\n\n*${t.form_message}:*\n${message}`;
                 const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(waMessage)}`;
                 window.open(waUrl, '_blank');
             } else {
-                const emailBody = `Nama: ${name}\nEmail: ${email}\n\nPesan:\n${message}`;
+                const emailBody = `${t.form_name}: ${name}\n${t.form_email}: ${email}\n\n${t.form_message}:\n${message}`;
                 const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${emailTarget}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
                 window.open(gmailUrl, '_blank');
             }
