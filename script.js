@@ -184,20 +184,114 @@ document.addEventListener('DOMContentLoaded', () => {
         contactForm.addEventListener('submit', (e) => e.preventDefault());
     }
 
-    // Modal Galeri (diperbarui untuk Owl Carousel)
+    // Modal Galeri (diperbarui untuk Owl Carousel dengan fitur Zoom & Pan)
     const modal = document.getElementById("galleryModal");
     if (modal) {
         const modalImg = document.getElementById("modalImg");
+        const modalZoom = document.getElementById("modalZoom");
         const closeBtn = document.querySelector(".modal-gallery-close");
+        
+        let isDragging = false;
+        let startX, startY;
+        let currentX = 0, currentY = 0;
+        let totalDragX = 0, totalDragY = 0;
+
+        // Fungsi update transformasi gambar
+        const updateTransform = () => {
+            const isZoomed = modalImg.classList.contains('zoomed');
+            const scale = isZoomed ? (window.innerWidth < 768 ? 2.5 : 2) : 1;
+            modalImg.style.transform = `translate(${currentX}px, ${currentY}px) scale(${scale})`;
+        };
+
+        // Reset posisi dan status zoom
+        const resetModalState = () => {
+            currentX = 0;
+            currentY = 0;
+            totalDragX = 0;
+            totalDragY = 0;
+            modalImg.classList.remove('zoomed');
+            modalImg.classList.remove('grabbing');
+            if (modalZoom) modalZoom.innerHTML = '<i class="fas fa-search-plus"></i>';
+            updateTransform();
+        };
 
         $(document).on('click', '#gallery-carousel .item img', function() {
-            const clickedImg = this; // 'this' refers to the clicked img element
             modal.style.display = "flex";
-            modalImg.src = clickedImg.src;
+            modalImg.src = this.src;
+            resetModalState();
         });
 
-        if (closeBtn) closeBtn.onclick = () => modal.style.display = "none";
-        modal.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; };
+        const toggleZoom = (e) => {
+            if (e) e.stopPropagation();
+            const isZoomed = modalImg.classList.toggle('zoomed');
+            currentX = 0;
+            currentY = 0;
+            if (modalZoom) {
+                modalZoom.innerHTML = isZoomed ? '<i class="fas fa-search-minus"></i>' : '<i class="fas fa-search-plus"></i>';
+            }
+            updateTransform();
+        };
+
+        if (modalZoom) modalZoom.onclick = toggleZoom;
+
+        // Logika Drag/Pan (Mouse)
+        modalImg.addEventListener('mousedown', (e) => {
+            if (!modalImg.classList.contains('zoomed')) return;
+            isDragging = true;
+            totalDragX = 0;
+            totalDragY = 0;
+            startX = e.clientX - currentX;
+            startY = e.clientY - currentY;
+            modalImg.classList.add('grabbing');
+            e.preventDefault();
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            const newX = e.clientX - startX;
+            const newY = e.clientY - startY;
+            totalDragX += Math.abs(newX - currentX);
+            totalDragY += Math.abs(newY - currentY);
+            currentX = newX;
+            currentY = newY;
+            updateTransform();
+        });
+
+        window.addEventListener('mouseup', () => {
+            isDragging = false;
+            modalImg.classList.remove('grabbing');
+        });
+
+        // Logika Drag/Pan (Touch Mobile)
+        modalImg.addEventListener('touchstart', (e) => {
+            if (!modalImg.classList.contains('zoomed')) return;
+            isDragging = true;
+            totalDragX = 0;
+            totalDragY = 0;
+            startX = e.touches[0].clientX - currentX;
+            startY = e.touches[0].clientY - currentY;
+        }, { passive: true });
+
+        window.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            const newX = e.touches[0].clientX - startX;
+            const newY = e.touches[0].clientY - startY;
+            totalDragX += Math.abs(newX - currentX);
+            totalDragY += Math.abs(newY - currentY);
+            currentX = newX;
+            currentY = newY;
+            updateTransform();
+            if (e.cancelable) e.preventDefault(); // Mencegah scroll halaman saat menggeser gambar
+        }, { passive: false });
+
+        window.addEventListener('touchend', () => isDragging = false);
+
+        modalImg.onclick = (e) => {
+            if (totalDragX < 10 && totalDragY < 10) toggleZoom(e);
+        };
+
+        if (closeBtn) closeBtn.onclick = () => { modal.style.display = "none"; resetModalState(); };
+        modal.onclick = (e) => { if (e.target === modal) { modal.style.display = "none"; resetModalState(); } };
     }
 
     // Magnifying Glass Logic for Gallery Images (diperbarui untuk Owl Carousel)

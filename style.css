@@ -849,8 +849,53 @@ footer { text-align: center; padding: 2rem 0; color: var(--text-secondary); font
     .scroll-indicator {
         display: none; /* Menyembunyikan indikator gulir untuk menghemat ruang di mobile */
     }
+    /* Menghilangkan indikator pagination carousel dan icon dekorasi jendela pada mobile */
+    .owl-dots, .window-dots {
+        display: none !important;
+    }
     .contact-buttons {
         grid-template-columns: 1fr !important;
+    }
+
+    /* Membuat gambar di dalam modal zoom lebih besar pada ukuran mobile */
+    .modal-gallery {
+        padding: 60px 10px 20px; /* Memberi ruang lebih untuk tombol tutup */
+        align-items: flex-start; /* Memudahkan scroll jika gambar sangat panjang */
+        overflow-y: auto;
+    }
+    .modal-gallery-content {
+        max-width: 100% !important;
+        max-height: none !important; /* Menghapus batasan tinggi agar gambar tidak mengecil */
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+        margin-bottom: 20px;
+    }
+    .modal-controls {
+        top: 15px;
+        right: 15px;
+        gap: 12px;
+    }
+    .modal-gallery-close, .modal-gallery-zoom {
+        position: static !important;
+        background: rgba(15, 23, 42, 0.8) !important;
+        width: 48px !important;
+        height: 48px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border-radius: 50% !important;
+        font-size: 22px !important;
+        border: none;
+        color: white;
+    }
+    .modal-gallery-content.zoomed {
+        transform: scale(2.5); /* Perbesaran lebih kuat di mobile agar teks API jelas */
+        margin-top: 0;
+    }
+    .modal-gallery-content.grabbing {
+        cursor: grabbing !important;
+        transition: none !important;
     }
 }
 
@@ -873,12 +918,30 @@ footer { text-align: center; padding: 2rem 0; color: var(--text-secondary); font
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(15, 23, 42, 0.95);
+    background-color: rgba(11, 17, 32, 0.98);
     backdrop-filter: blur(10px);
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
+.modal-controls {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    z-index: 10002;
+}
+.modal-gallery-zoom {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 32px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.modal-gallery-zoom:hover { color: var(--accent); }
 .modal-gallery-content {
     margin: auto;
     display: block;
@@ -886,11 +949,24 @@ footer { text-align: center; padding: 2rem 0; color: var(--text-secondary); font
     max-height: 85vh;
     border-radius: 12px;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: zoom-in;
+    user-select: none;
+    touch-action: none; /* Penting untuk drag di mobile */
+    transform-origin: center;
+}
+.modal-gallery-content.zoomed {
+    transform: scale(2);
+    cursor: grab;
+    max-width: none;
+    max-height: none;
+}
+.modal-gallery-content.grabbing {
+    cursor: grabbing;
+    transition: none !important;
 }
 .modal-gallery-close {
-    position: absolute;
-    top: 20px;
-    right: 30px;
+    position: static;
     color: #fff;
     font-size: 40px;
     font-weight: bold;
