@@ -375,23 +375,108 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    // Modal Galeri Sederhana Terpusat
+    // Modal Galeri Sederhana Terpusat (Diperbarui dengan fitur Zoom & Pan)
     const modal = document.getElementById("galleryModal");
     if (modal) {
         const modalImg = document.getElementById("modalImg");
+        const modalZoom = document.getElementById("modalZoom");
         const closeBtn = document.querySelector(".modal-gallery-close");
+        
+        let isDragging = false;
+        let startX, startY;
+        let currentX = 0, currentY = 0;
+        let totalDragX = 0, totalDragY = 0;
+
+        const updateTransform = () => {
+            const isZoomed = modalImg.classList.contains('zoomed');
+            const scale = isZoomed ? (window.innerWidth < 768 ? 2.5 : 2) : 1;
+            modalImg.style.transform = `translate(${currentX}px, ${currentY}px) scale(${scale})`;
+        };
+
+        const resetModalState = () => {
+            currentX = 0;
+            currentY = 0;
+            totalDragX = 0;
+            totalDragY = 0;
+            modalImg.classList.remove('zoomed');
+            modalImg.classList.remove('grabbing');
+            if (modalZoom) modalZoom.innerHTML = '<i class="fas fa-search-plus"></i>';
+            updateTransform();
+        };
 
         document.querySelectorAll('.gallery-grid img').forEach(img => {
             img.addEventListener('click', () => {
                 modal.style.display = "flex";
                 modalImg.src = img.src;
+                resetModalState();
             });
         });
 
-        if (closeBtn) {
-            closeBtn.onclick = () => modal.style.display = "none";
-        }
-        modal.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; };
+        const toggleZoom = (e) => {
+            if (e) e.stopPropagation();
+            const isZoomed = modalImg.classList.toggle('zoomed');
+            currentX = 0;
+            currentY = 0;
+            if (modalZoom) {
+                modalZoom.innerHTML = isZoomed ? '<i class="fas fa-search-minus"></i>' : '<i class="fas fa-search-plus"></i>';
+            }
+            updateTransform();
+        };
+
+        if (modalZoom) modalZoom.onclick = toggleZoom;
+
+        modalImg.addEventListener('mousedown', (e) => {
+            if (!modalImg.classList.contains('zoomed')) return;
+            isDragging = true;
+            totalDragX = 0; totalDragY = 0;
+            startX = e.clientX - currentX;
+            startY = e.clientY - currentY;
+            modalImg.classList.add('grabbing');
+            e.preventDefault();
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            const newX = e.clientX - startX;
+            const newY = e.clientY - startY;
+            totalDragX += Math.abs(newX - currentX);
+            totalDragY += Math.abs(newY - currentY);
+            currentX = newX; currentY = newY;
+            updateTransform();
+        });
+
+        window.addEventListener('mouseup', () => {
+            isDragging = false;
+            modalImg.classList.remove('grabbing');
+        });
+
+        modalImg.addEventListener('touchstart', (e) => {
+            if (!modalImg.classList.contains('zoomed')) return;
+            isDragging = true;
+            totalDragX = 0; totalDragY = 0;
+            startX = e.touches[0].clientX - currentX;
+            startY = e.touches[0].clientY - currentY;
+        }, { passive: true });
+
+        window.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            const newX = e.touches[0].clientX - startX;
+            const newY = e.touches[0].clientY - startY;
+            totalDragX += Math.abs(newX - currentX);
+            totalDragY += Math.abs(newY - currentY);
+            currentX = newX; currentY = newY;
+            updateTransform();
+            if (e.cancelable) e.preventDefault();
+        }, { passive: false });
+
+        window.addEventListener('touchend', () => isDragging = false);
+
+        modalImg.onclick = (e) => {
+            if (totalDragX < 10 && totalDragY < 10) toggleZoom(e);
+        };
+
+        if (closeBtn) closeBtn.onclick = () => { modal.style.display = "none"; resetModalState(); };
+        modal.onclick = (e) => { if (e.target === modal) { modal.style.display = "none"; resetModalState(); } };
     }
 
     // Magnifying Glass Logic for Gallery Images
